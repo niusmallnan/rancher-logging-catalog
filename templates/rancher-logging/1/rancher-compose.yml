@@ -1,6 +1,6 @@
 .catalog:
   name: "Rancher Logging"
-  version: "v0.2.0"
+  version: v0.2.0
   description: "Rancher Logging Collector"
   questions:
     - variable: "elasticsearch_source"
