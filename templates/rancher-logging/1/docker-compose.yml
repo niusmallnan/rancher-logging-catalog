@@ -14,10 +14,10 @@ services:
     privileged: true
     image: registry.cn-hangzhou.aliyuncs.com/niusmallnan/logging-helper:v0.2.0
     environment:
-      LOG_VOL_PATTERN:${log_vol_pattern}
-      LOG_FILE_PATTERN:${log_file_pattern}
+      LOG_VOL_PATTERN: ${log_vol_pattern}
+      LOG_FILE_PATTERN: ${log_file_pattern}
     external_links:
-    - ${elasticsearch_source}:elasticsearch
+    - ${elasticsearch_source}: elasticsearch
     volumes:
     - /var/lib/docker:/var/lib/docker
     - /var/log/logging-volumes:/var/log/logging-volumes
