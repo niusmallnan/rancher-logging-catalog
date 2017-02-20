@@ -21,15 +21,3 @@
       type: "string"
       required: true
       default: "*.log"
-
-logging-helper:
-  health_check:
-    response_timeout: 2000
-    healthy_threshold: 2
-    port: 9898
-    unhealthy_threshold: 3
-    initializing_timeout: 60000
-    interval: 2000
-    strategy: recreate
-    request_line: GET "/healthcheck" "HTTP/1.0"
-    reinitializing_timeout: 60000
