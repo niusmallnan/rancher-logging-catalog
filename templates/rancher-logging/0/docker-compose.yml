@@ -4,7 +4,7 @@ services:
     privileged: true
     image: registry.cn-hangzhou.aliyuncs.com/niusmallnan/logging-es:v0.1.0
     external_links:
-    - elasticsearch-2/elasticsearch-clients:elasticsearch
+    - ${elasticsearch_source}: elasticsearch
     pid: host
     volumes_from:
     - logging-helper
@@ -16,7 +16,7 @@ services:
     privileged: true
     image: registry.cn-hangzhou.aliyuncs.com/niusmallnan/logging-helper:v0.1.0
     external_links:
-    - ${elasticsearch_source}:elasticsearch
+    - ${elasticsearch_source}: elasticsearch
     volumes:
     - /var/lib/docker:/var/lib/docker
     - /var/log/logging-volumes:/var/log/logging-volumes
