@@ -20,6 +20,11 @@ services:
       io.rancher.container.pull_image: always
       io.rancher.scheduler.global: 'true'
       io.rancher.sidekicks: logging-helper
+    logging:
+      driver: json-file
+      options:
+        max-size: 25m
+        max-file: '2'
   logging-helper:
     privileged: true
     image: registry.cn-hangzhou.aliyuncs.com/niusmallnan/logging-helper:v0.2.1
@@ -37,3 +42,8 @@ services:
     pid: host
     labels:
       io.rancher.container.pull_image: always
+    logging:
+      driver: json-file
+      options:
+        max-size: 25m
+        max-file: '2'
