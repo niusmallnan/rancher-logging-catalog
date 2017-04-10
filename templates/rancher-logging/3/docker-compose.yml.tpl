@@ -27,7 +27,7 @@ services:
         max-file: '2'
   logging-helper:
     privileged: true
-    image: registry.cn-hangzhou.aliyuncs.com/niusmallnan/logging-helper:v0.2.1
+    image: registry.cn-hangzhou.aliyuncs.com/niusmallnan/logging-helper:v0.3.0
     environment:
       LOG_VOL_PATTERN: '${log_vol_pattern}'
       LOG_FILE_PATTERN: '${log_file_pattern}'
