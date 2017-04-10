@@ -2,7 +2,7 @@ version: '2'
 services:
   logging-agent:
     privileged: true
-    image: registry.cn-hangzhou.aliyuncs.com/niusmallnan/logging-es:v0.2.0
+    image: registry.cn-hangzhou.aliyuncs.com/niusmallnan/logging-es:v0.3.0
     pid: host
     {{- if eq .Values.log_driver "journald" }}
     command:
@@ -36,9 +36,6 @@ services:
     - /var/log/logging-volumes:/var/log/logging-volumes
     - /var/log/logging-containers:/var/log/logging-containers
     - /var/run/docker.sock:/var/run/docker.sock
-    {{- if eq .Values.log_driver "journald" }}
-    - /run/log/journal:/run/log/journal
-    {{- end }}
     pid: host
     labels:
       io.rancher.container.pull_image: always
